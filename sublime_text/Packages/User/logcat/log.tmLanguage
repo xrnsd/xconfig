@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>log</string>
+	</array>
+	<key>name</key>
+	<string>log</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>comment</key>
+			<string>Keyword</string>
+			<key>match</key>
+			<string>\b(INFO|Info|WARN|Warn|ERROR|Error)\b</string>
+			<key>name</key>
+			<string>keyword.other.log</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Number</string>
+			<key>match</key>
+			<!-- <string>\b((\d*)|(0x[0-9a-zA-Z]*))\b</string> -->
+			<string>(\b(Short Msg: java.lang.|Long Msg: java.lang.|at )\b.*)</string>
+			<key>name</key>
+			<string>constant.numeric.log</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Funtion</string>
+			<key>match</key>
+			<string>([-+])(\[.*?\])</string>
+			<key>name</key>
+			<string>support.function.log</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Crash Error</string>
+			<key>match</key>
+			<string>(\b(CRASH|Crash|crash|WARNING|Warning|warning|FAIL|Fail|fail)\b.*)</string>
+			<key>name</key>
+			<string>string.regexp.log</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Exception Error</string>
+			<key>match</key>
+			<string>(\b(java.lang.RuntimeException)\b.*)</string>
+			<key>name</key>
+			<string>string.regexp.log</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>text.log</string>
+	<key>uuid</key>
+	<string>516bc7ff-03be-4474-a398-b83e20204594</string>
+</dict>
+</plist>

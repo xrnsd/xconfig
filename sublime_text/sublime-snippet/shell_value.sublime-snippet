@@ -1,0 +1,42 @@
+<snippet>
+	<content><![CDATA[
+#空变量默认值,默认值为yyyy
+    xxx=\${xxx:-'yyy'}
+
+#包含
+    [[ xxx == *yyy* ]]
+    [[ "\$xxx" =~ ^\${yyy}* ]]
+
+#数字判断
+    if ( echo -n \$xxx | grep -q -e "^[0-9][0-9]*\$")
+
+#字母[大小写]判断
+    [[ "\$xxx" =~  ^[a-zA-Z]+\$ ]]  #判断字母
+    [[ "\$xxx" =~  ^[A-Z]+\$ ]]      #判断大写
+
+#大小写转换
+    \${xxx^^}  #转大写
+    \${yyy,,} #转小写
+
+#算术
+    ((xxx+=1))
+
+#大小
+    (( \$xxx>\$yyy ))
+
+#替换，yyy换为zzz  变量不能有分隔符
+    \${xxx//\$yyy/\$zzz}                                        
+    \$(echo \$xxx | sed "s \$yyy \$zzz g" )     
+    \$(echo \$xxx | sed -e "s:\$yyy:\$zzz:g")
+
+#删除空格
+     \$(echo \$xxx |sed s/[[:space:]]//g)
+
+#以yyy为分隔符把xxx分割成数组zzz
+    zzz=($(echo "${xxx}"| sed 's?$yyy? ?g'))
+
+]]></content>
+	<tabTrigger>xval</tabTrigger>
+	<scope>source.shell</scope>
+	<description>变量处理相关示例</description>
+</snippet>

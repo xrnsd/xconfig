@@ -1,0 +1,21 @@
+<snippet>
+	<content><![CDATA[
+#遍历 ls输出的内容
+    ls xxx | while read line;do echo $line ;done
+
+#倒序遍历数组
+    i=\${#xxx[@]}
+    while (( \$i>0 )) ;do (( i-=1 ))
+      #\${xxx[\$i]}
+    done
+
+#自带下标的数组遍历
+    for index in "${!xxxxxx[@]}"; do
+       echo ${xxxxxx[\$index]}
+    done
+
+]]></content>
+	<tabTrigger>xarray</tabTrigger>
+	<scope>source.shell</scope>
+	<description>数组相关示例</description>
+</snippet>

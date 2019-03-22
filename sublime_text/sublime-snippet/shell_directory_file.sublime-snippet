@@ -1,0 +1,30 @@
+<snippet>
+	<content><![CDATA[
+#文件名处理
+    \${xxx%.*}    #文件名
+    \${xxx##*.}  #后缀名 
+
+#路径处理
+    #返回路径最后的文件或目录名
+    \$(basename \$xxx)   # xxx为/test/test.log  输出 test.log
+    #返回去掉路径最后一级的路径
+    \$(dirname \$xxx)       #xxx为/test/test.log  输出 /test
+
+# ===========  目录遍历
+    ls \$xxx | while read line ; do
+       echo \$line
+    done
+
+# ===========  文件数量获取,xxx下名称含yyy的数量为zzz
+    zzz= \$(ls -l \$xxx |grep 'yyy'|grep "^-"|wc -l)
+
+# ===========  文件内容替换,文件zzz里面xxx替换成yyy
+    sed -i "s/\$xxx/\$yyy/g" \$zzz
+    sed -i "s \$xxx \$yyy g" \$zzz
+    sed -i "s:\$xxx:\$yyy:g" \$zzz
+
+]]></content>
+	<tabTrigger>xfile</tabTrigger>
+	<scope>source.shell</scope>
+	<description>文件目录操作相关示例</description>
+</snippet>

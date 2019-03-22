@@ -1,0 +1,48 @@
+{
+	"binary_file_patterns":
+	[
+		"*.mat",
+		"*.jpg",
+		"*.jpeg",
+		"*.png",
+		"*.gif",
+		"*.ttf",
+		"*.tga",
+		"*.dds",
+		"*.ico",
+		"*.eot",
+		"*.pdf",
+		"*.swf",
+		"*.jar",
+		"*.zip"
+	],
+	"bold_folder_labels": true,
+	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
+	"draw_white_space": "all",
+	"fade_fold_buttons": false,
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		"node_modules/*"
+	],
+	"font_size": 15,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"rulers":
+	[
+		80
+	],
+	"show_encoding": true,
+	"show_full_path": true,
+	"theme": "Adaptive.sublime-theme",
+	"translate_tabs_to_spaces": false,
+	"update_check": false,
+	"word_wrap": true
+}

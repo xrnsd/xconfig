@@ -1,0 +1,29 @@
+<background> 
+  <starttime>  <!--  starttime标签设置动画（幻灯片）开始的时间，可根据自己制作的时间设定，这个应该不影响实际要实现的功能  -->
+    <year>2009</year> 
+    <month>08</month> 
+    <day>04</day> 
+    <hour>00</hour> 
+    <minute>00</minute> 
+    <second>00</second> 
+  </starttime> 
+<!-- This animation will start at midnight. -->   <!--  "animation"动画的意思  -->
+  <static>  <!-- "static"静态的意思  -->
+    <duration>10.0</duration>  <!-- duration标签设置持续的时间，以秒为单位。  -->
+    <file>/home/wgx/xconfig/ubuntu/desktop/res_bg/1.jpg</file> <!--  file标签指定壁纸存放的路径  -->
+  </static> 
+  <transition> <!-- "transition"切换的意思  -->
+    <duration>5.0</duration> 
+    <from>/home/wgx/xconfig/ubuntu/desktop/res_bg/1.jpg</from> <!-- from ... to从壁纸A切换到壁纸B。  -->
+    <to>/home/wgx/xconfig/ubuntu/desktop/res_bg/2.jpg</to> 
+  </transition> 
+  <static> 
+    <duration>10.0</duration> 
+    <file>/home/wgx/xconfig/ubuntu/desktop/res_bg/2.jpg</file> 
+  </static>
+  <transition> 
+    <duration>5.0</duration> 
+    <from>/home/wgx/xconfig/ubuntu/desktop/res_bg/comet.jpg</from> 
+    <to>/home/wgx/xconfig/ubuntu/desktop/res_bg/1.jpg</to> 
+  </transition> 
+</background>

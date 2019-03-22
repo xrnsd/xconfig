@@ -1,0 +1,24 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+---
+name: logcat
+scopeName: text.logcat
+fileTypes: [logcat]
+uuid: 516bc7ff-03be-4474-a398-b83e20204594
+
+patterns:
+- comment: Keyword
+  name: keyword.other.logcat
+  match: \b(INFO|Info|WARN|Warn|ERROR|Error)\b
+
+- comment: Number
+  name: constant.numeric.logcat
+  match: \b((\d*)|(0x[0-9a-zA-Z]*))\b
+
+- comment: Funtion
+  name: support.function.logcat
+  match: ([-+])(\[.*?\])
+
+- comment: Crash Error
+  name: string.regexp.log
+  match: (\b(Exception|CRASH|Crash|crash|WARNING|Warning|warning|FAIL|Fail|fail)\b.*)
+...
