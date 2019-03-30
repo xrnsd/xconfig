@@ -33,7 +33,7 @@
      \$(echo \$xxx |sed s/[[:space:]]//g)
 
 #以yyy为分隔符把xxx分割成数组zzz
-    zzz=($(echo "${xxx}"| sed 's?$yyy? ?g'))
+    zzz=(\$(echo "\${xxx}"| sed 's?\$yyy? ?g'))
 
 ]]></content>
 	<tabTrigger>xval</tabTrigger>

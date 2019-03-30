@@ -1,7 +1,7 @@
 <snippet>
 	<content><![CDATA[
 #遍历 ls输出的内容
-    ls xxx | while read line;do echo $line ;done
+    ls xxx | while read line;do echo \$line ;done
 
 #倒序遍历数组
     i=\${#xxx[@]}
@@ -10,8 +10,8 @@
     done
 
 #自带下标的数组遍历
-    for index in "${!xxxxxx[@]}"; do
-       echo ${xxxxxx[\$index]}
+    for index in "\${!xxxxxx[@]}"; do
+       echo \${xxxxxx[\$index]}
     done
 
 ]]></content>
