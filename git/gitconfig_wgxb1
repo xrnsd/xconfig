@@ -1,6 +1,6 @@
 [user]
     name = wgxb1
-    email = lz_wuguoxian@163.com/15019962261/qq:1718686576
+    email = lz_wuguoxian@163.com
 [color "status"]
     added = white
     changed = yellow
@@ -9,13 +9,19 @@
     default = simple
 [gui]
     spellingdictionary = none
+	encoding = utf-8
 [core]
     editor = nano
+	autocrlf = input
+	quotepath = false
 [color]
     ui = auto
 [diff]
     tool = bc3
-    external = /home/wgx/cmds/config/other/git/git_bcompare.sh
 [credential]
 helper = store
 
+[i18n "commit"]
+	encoding = utf-8
+[i18n]
+	logoutputencoding = utf-8

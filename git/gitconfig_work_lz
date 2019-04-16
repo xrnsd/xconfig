@@ -11,6 +11,7 @@
     spellingdictionary = none
 [core]
     editor = nano
+	autocrlf = input
 [color]
     ui = auto
 [diff]
