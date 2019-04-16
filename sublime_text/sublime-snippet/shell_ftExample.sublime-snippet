@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[
-complete -W "-x -xx" ftExample
+complete -W "-h --help" ftExample
 ftExample()
 {
     local ftEffect=函数模板
@@ -33,16 +33,11 @@ ftExample()
     #依赖校验
     [[ -z \$(which exampleTools1) ]] && ftExample --rely "exampleTools1" && return
     #解参验耦
-    local valCount=1
-    local errorContent=
-    local arg ; local arg2 ; #local arg3 ;#local arg4
-    local index;for ((i=1;i<=\$#;i++)) ; do eval arg=\\\${\${i}}
-    ((index=i+1)) ; eval arg2=\\\${\${index}}
-    #((index=i+2)) ; eval arg3=\\\${\${index}}
-    #((index=i+3)) ; eval arg4=\\\${\${index}}
+    local valCount=1 errorContent index arg arg2 # arg3 # arg4
+    for ((i=1;i<=\$#;i++)) ; do eval arg=\\\${\${i}} ; ((index=i+1)) ; eval arg2=\\\${\${index}}
+    #((index=i+2)) ; eval arg3=\\\${\${index}} #; ((index=i+3)) ; eval arg4=\\\${\${index}}
     case "\${arg}" in
-        -x ) example1="\${arg2}"
-              # example1="\${arg2:-"exampleDef1"}" 
+        -x ) example1="\${arg2}" #"\${arg2:-"exampleDef1"}" 
           ;;
     * ) [[ -z "\${arg}" ]] && break  ;; esac;done
 
