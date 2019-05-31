@@ -1,0 +1,9 @@
+[user]
+	email = wugx@sxtech.com
+	name = wuguoxian
+[push]
+	default = simple
+[color]
+	ui = auto
+[http]
+	cookiefile = /home/enjoy/.gitcookies
