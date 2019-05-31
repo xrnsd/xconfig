@@ -11,9 +11,9 @@
     \$(dirname \$xxx)       #xxx为/test/test.log  输出 /test
 
 # ===========  目录遍历
-    ls \$xxx | while read line ; do
-       echo \$line
-    done
+    while read item ;do
+       echo \$item
+    done < <(echo "\$(ls \$xxx)")
 
 # ===========  文件数量获取,xxx下名称含yyy的数量为zzz
     zzz= \$(ls -l \$xxx |grep 'yyy'|grep "^-"|wc -l)
