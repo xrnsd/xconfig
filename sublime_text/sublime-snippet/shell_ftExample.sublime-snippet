@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[
-complete -W "-h --help" ftExample
+complete -W "-h --help --rely_install" ftExample
 ftExample()
 {
     local ftEffect=函数模板
@@ -15,6 +15,10 @@ ftExample()
 #    \${ftEffect}依赖包 \$2
 #    请尝试使用 sudo apt-get install \$2 补全依赖
 #========================================================="; return ;;
+    --rely_install)
+            ftEcho -s "开始补全依赖"
+            sudo apt-get install xxxx
+            return ;;
     -h | --help) echo -e "\
 #===================[   \${ftEffect}   ]的使用示例==============
 #    以下[参数对]无先后顺序可任意组合

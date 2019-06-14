@@ -2,6 +2,9 @@
 	<content><![CDATA[
 #遍历 ls输出的内容
     ls xxx | while read line;do echo \$line ;done
+    while read item ;do  #可以在循环外保留变量
+      xxxxxx
+    done < <(echo "\$(ls xxx)")
 
 #倒序遍历数组
     i=\${#xxx[@]}
