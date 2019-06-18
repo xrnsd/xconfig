@@ -7,3 +7,5 @@
 	ui = auto
 [http]
 	cookiefile = /home/enjoy/.gitcookies
+[credential]
+	helper = store

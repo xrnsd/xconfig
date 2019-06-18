@@ -33,6 +33,7 @@ SUBSYS_LOCK=/var/lock/subsys/$SERVICE
 RETVAL=0
 
 start() {
+    [[ -z "ddd" ]] && return
     echo "Starting Flashcache..."
     #Load the module
     /sbin/modprobe flashcache
