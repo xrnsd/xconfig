@@ -17,6 +17,8 @@
         adb shell screenrecord /sdcard/filename.mp4&&adb pull /sdcard/filename.mp4 xxxxx
     #services 列表
         adb shell service list
+    #查看手机IMEI
+        adb shell dumpsys iphonesubinfo
 
 # =========== logcat
     #log等级

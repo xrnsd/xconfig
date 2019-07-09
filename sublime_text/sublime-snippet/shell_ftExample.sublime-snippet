@@ -38,6 +38,7 @@ ftExample()
     [[ -z \$(which exampleTools1) ]] && ftExample --rely "exampleTools1" && return
     #解参验耦
     local valCount=1 errorContent index arg arg2 # arg3 # arg4
+    local example1
     for ((i=1;i<=\$#;i++)) ; do eval arg=\\\${\${i}} ; ((index=i+1)) ; eval arg2=\\\${\${index}}
     #((index=i+2)) ; eval arg3=\\\${\${index}} #; ((index=i+3)) ; eval arg4=\\\${\${index}}
     case "\${arg}" in
