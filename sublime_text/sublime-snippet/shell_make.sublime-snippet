@@ -1,0 +1,26 @@
+<snippet>
+	<content><![CDATA[
+# =========== 读取系统信息
+    make xxxx -jxxx
+             #生成 mtxxx_android_scatter.txt 文件
+                ptgen
+              #生成 recovery recovery.img
+                recoveryimage
+              #生成 userdata.img
+                userdataimage
+              #打包 userdata.img
+                userdataimage-nodeps
+              #打包 ramdisk.img
+                ramdisk-nodeps
+              #打包 boot.img
+                bootimage-nodeps
+              #生成 bootloader / lk.bin
+                lk
+              #生成 preloader / preloader.img
+                pl
+
+]]></content>
+	<tabTrigger>xmake</tabTrigger>
+	<scope>source.shell</scope>
+	<description>AOSP build 常用命令</description>
+</snippet>
