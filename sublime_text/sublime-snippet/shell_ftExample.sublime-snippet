@@ -10,23 +10,23 @@ ftExample()
     # trap 'printf "变量跟踪\e[33m %-7s \e[0m \e[31m %-30s \e[0m  \n" [\$LINENO]: example1=\$example1' ERR
 
     while true; do case "\$1" in
-    --rely) echo -e "\
-#===================[   \${ftEffect}   ]的依赖说明=============
-#    \${ftEffect}依赖包 \$2
-#    请尝试使用 sudo apt-get install \$2 补全依赖
+    --rely) ftEcho -s  "[ \${ftEffect} ]的依赖说明 ";echo -e "\
+#=========================================================
+#    缺失依赖： \${2}
+#    补全依赖： \${3} 
 #========================================================="; return ;;
     --rely_install)
             ftEcho -s "开始补全依赖"
             sudo apt-get install xxxx
             return ;;
-    -h | --help) echo -e "\
-#===================[   \${ftEffect}   ]的使用示例==============
+    -h | --help) ftEcho -s  "[ \${ftEffect} ]的使用示例 ";echo -e "\
+#=========================================================
 #    以下[参数对]无先后顺序可任意组合
 #
 #    ftExample xxxx
 #========================================================="; return ;;
-    --env) echo -e "\
-#===================[   \${ftEffect}   ]的使用环境说明==============
+    --env) ftEcho -s  "[ \${ftEffect} ]的使用环境说明 ";echo -e "\
+#=========================================================
 # 环境未初始化
 # 使用前,请先初始化[xxxxxxxxx]
 #========================================================="; return ;;
@@ -35,7 +35,7 @@ ftExample()
     #可用性校验
     [[ "\$isEnable" = "false" ]] && ftEcho -s "\${ftEffect} 已被禁用，请确认" && return
     #依赖校验
-    [[ -z \$(which exampleTools1) ]] && ftExample --rely "exampleTools1" && return
+    [[ -z \$(which exampleTools1) ]] && ftExample --rely "exampleTools1" "sudo apt-get install exampleTools1" && return
     #解参验耦
     local valCount=1 errorContent index arg arg2 # arg3 # arg4
     local example1
