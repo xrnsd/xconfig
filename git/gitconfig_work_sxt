@@ -9,3 +9,8 @@
 	cookiefile = /home/enjoy/.gitcookies
 [credential]
 	helper = store
+[alias]
+    co = checkout
+    ci = commit
+    br = branch
+    ciau = update-index --assume-unchanged
