@@ -1,0 +1,9 @@
+#added by wgx
+UUID=47e611dc-1445-4f19-8b06-7dbe108fe006  /media/cache      ext4    errors=remount-ro 0      2
+UUID=2b027e6f-c86e-46e2-aef6-b8e8c7e61ed6  /media/data      ext4    errors=remount-ro 0       3
+UUID=effc65c9-f580-4cc5-850a-1c71656987ca  /media/code      ext4    errors=remount-ro 0       4
+
+tmpfs   /tmp                tmpfs   defaults,noatime,mode=1777      0       0
+tmpfs   /var/tmp            tmpfs   defaults,noatime,mode=1777      0       0
+tmpfs   /var/log            tmpfs   defaults,noatime,mode=1777      0       0
+tmpfs   /home/enjoy/.cache  tmpfs   defaults,noatime,mode=1777      0       0
