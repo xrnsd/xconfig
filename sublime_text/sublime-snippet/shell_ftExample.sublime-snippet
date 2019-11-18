@@ -9,45 +9,47 @@ ftExample()
     # trap 'printf "变量跟踪\e[33m %-7s \e[0m \e[31m %-30s \e[0m  \n" [\$LINENO]: example1=\$example1' DEBUG
     # trap 'printf "变量跟踪\e[33m %-7s \e[0m \e[31m %-30s \e[0m  \n" [\$LINENO]: example1=\$example1' ERR
 
-    while true; do case "\$1" in
-    --rely) ftEcho -s  "[ \${ftEffect} ]的依赖说明 ";echo -e "\
+    #可用性校验
+    [[ "\$isEnable" != "true" ]] && ftEcho -s "\${ftEffect} 已被禁用，请确认" && return
+    #解参验耦
+    local example1
+    local valCount=1 errorContent arg arg2 # arg3 # arg4
+    for ((i=1;i<=\$#;i++)) ; do eval arg=\\\${\${i}} ; eval arg2=\\\${\$((i+1))}
+    #eval arg3=\\\${\$((i+2))} #; eval arg4=\\\${\$((i+3))}
+    case "\${arg}" in
+        # 说明参数解析部分 ==============
+        --rely) ftEcho -rc "\${ftEffect}" "的依赖说明" "\
 #=========================================================
-#    缺失依赖： \${2}
-#    补全依赖： \${3} 
+#    \${ftEffect}依赖包 \$2
+#    请尝试使用 ftExample --rely_install 补全依赖
 #========================================================="; return ;;
-    --rely_install)
+        --rely_install)
             ftEcho -s "开始补全依赖"
             sudo apt-get install xxxx
             return ;;
-    -h | --help) ftEcho -s  "[ \${ftEffect} ]的使用示例 ";echo -e "\
+        -h | --help) ftEcho -rc "\${ftEffect}" "的使用示例" "\
 #=========================================================
 #    以下[参数对]无先后顺序可任意组合
 #
 #    ftExample xxxx
 #========================================================="; return ;;
-    --env) ftEcho -s  "[ \${ftEffect} ]的使用环境说明 ";echo -e "\
+        --env) ftEcho -rc "\${ftEffect}" "的使用环境说明" "\
 #=========================================================
-# 环境未初始化
-# 使用前,请先初始化[xxxxxxxxx]
+#    环境未初始化
+#    使用前,请先初始化[xxxxxxxxx]
 #========================================================="; return ;;
+
+        # 变量参数解析部分 ==============
+        -x ) example1="\${arg2}" #"\${arg2:-"exampleDef1"}" #"\${arg3:-"exampleDef2"}" #"\${arg4:-"exampleDef4"}"
     * ) break;;esac;done
 
-    #可用性校验
-    [[ "\$isEnable" = "false" ]] && ftEcho -s "\${ftEffect} 已被禁用，请确认" && return
     #依赖校验
-    [[ -z \$(which exampleTools1) ]] && ftExample --rely "exampleTools1" "sudo apt-get install exampleTools1" && return
-    #解参验耦
-    local valCount=1 errorContent index arg arg2 # arg3 # arg4
-    local example1
-    for ((i=1;i<=\$#;i++)) ; do eval arg=\\\${\${i}} ; ((index=i+1)) ; eval arg2=\\\${\${index}}
-    #((index=i+2)) ; eval arg3=\\\${\${index}} #; ((index=i+3)) ; eval arg4=\\\${\${index}}
-    case "\${arg}" in
-        -x ) example1="\${arg2}" #"\${arg2:-"exampleDef1"}" 
-          ;;
-    * ) [[ -z "\${arg}" ]] && break  ;; esac;done
-
+    [[ -z \$(which exampleTools1) ]] && ftExample --rely "exampleTools1" && return
+    #环境校验
+    [ -z "\${exampleTools2}" ] && ftExample --env && return
+    #参数校验
     (( \$#!=\$valCount )) && errorContent="\${errorContent}\\\n参数默认有\${valCount}个,当前为\$#个" 
-    [ -z "\$TTest1" ] && errorContent="\${errorContent}\\\n[示例1]TTest1=\$TTest1"
+    [ -z "\${example1}" ] && errorContent="\${errorContent}\\\n[示例1]example1=\$example1"
     [ -n "\$errorContent" ] && ftEcho -ea "函数[\${ftEffect}]的参数错误\${errorContent}\\\n请查看下面说明:" && ftExample -h && return
 
     #实现主体
