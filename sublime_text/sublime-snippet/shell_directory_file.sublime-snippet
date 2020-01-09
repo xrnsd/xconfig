@@ -23,6 +23,10 @@
     sed -i "s \$xxx \$yyy g" \$zzz
     sed -i "s:\$xxx:\$yyy:g" \$zzz
 
+# ===========  路径拼接
+    #去掉最后的斜杠
+    [[ "\${dirPath: -1}" = "/" ]] && dirPath=\${dirPath%/*}
+
 ]]></content>
 	<tabTrigger>xfile</tabTrigger>
 	<scope>source.shell</scope>

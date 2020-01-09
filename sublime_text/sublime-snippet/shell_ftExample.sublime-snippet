@@ -41,6 +41,7 @@ ftExample()
 
         # 变量参数解析部分 ==============
         -x ) example1="\${arg2}" #"\${arg2:-"exampleDef1"}" #"\${arg3:-"exampleDef2"}" #"\${arg4:-"exampleDef4"}"
+            ;;
     * ) break;;esac;done
 
     #依赖校验

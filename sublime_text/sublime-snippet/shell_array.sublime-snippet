@@ -2,9 +2,12 @@
 	<content><![CDATA[
 #遍历 ls输出的内容
     ls xxx | while read line;do echo \$line ;done
+
     while read item ;do  #可以在循环外保留变量
       xxxxxx
     done < <(echo "\$(ls xxx)")
+
+     for file in xxx/*.xxx ;do echo file=\$file ;done
 
 #倒序遍历数组
     i=\${#xxx[@]}
@@ -16,6 +19,15 @@
     for index in "\${!xxxxxx[@]}"; do
        echo \${xxxxxx[\$index]}
     done
+
+    for (( index = 0; index <\${#xxxxxx[@]}; index++ )); do
+       echo \${xxxxxx[\$index]}
+    done
+
+#成员带空格的数组遍历
+echo "\${xxxxxx[@]}" | while read fileName;do
+    echo "\${fileName}"
+done
 
 ]]></content>
 	<tabTrigger>xarray</tabTrigger>
