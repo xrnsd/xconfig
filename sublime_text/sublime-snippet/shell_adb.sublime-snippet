@@ -97,6 +97,12 @@
 # =========== 清除APK数据与缓存
     adb shell pm clear packageName
 
+# =========== 查看wifi密码
+    adb shell cat /data/misc/wifi/*.conf
+
+# =========== 查看bug报告
+    adb bugreport
+
 ]]></content>
 	<tabTrigger>xadb</tabTrigger>
 	<scope>source.shell</scope>
