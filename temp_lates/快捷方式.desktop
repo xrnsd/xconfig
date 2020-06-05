@@ -1,0 +1,22 @@
+[Desktop Entry]
+Encoding=UTF-8
+
+#快捷方式名
+Name=eclipse
+Comment=Eclipse IDE
+
+#快捷方式的执行文件路径
+Exec=/opt/eclipse/eclipse
+
+#快捷方式图标
+Icon=/opt/eclipse/icon.xpm
+
+#启动时是否开启终端
+Terminal=false
+
+#在Type为Application时，true表示需要在终端中运行
+StartupNotify=true
+Type=Application
+
+#快捷方式类型,分类
+Categories=Application;Development;
