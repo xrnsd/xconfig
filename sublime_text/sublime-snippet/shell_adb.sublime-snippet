@@ -1,6 +1,8 @@
 <snippet>
 	<content><![CDATA[
 # =========== 读取系统信息
+    #系统开机信息
+        adb shell cat /proc/bootprof
     #系统配置 prop
         adb shell getprop |grep "persist.shutdown.sounds"   #读
         adb shell setprop persist.shutdown.sounds 1        #写
