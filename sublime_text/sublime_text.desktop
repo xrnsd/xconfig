@@ -19,6 +19,12 @@ Name=New Window
 Exec=bash -c 'LD_PRELOAD=/home/wgx/xconfig/sublime_text/libsublime-imfix.so /opt/sublime_text/sublime_text -n'
 OnlyShowIn=Unity;
 
+[Desktop Action Window]
+Name=New Window & xbash xconfig
+#Exec=/opt/sublime_text/sublime_text -n
+Exec=bash -c 'LD_PRELOAD=/home/wgx/xconfig/sublime_text/libsublime-imfix.so /opt/sublime_text/sublime_text -n /home/enjoy/xbash /home/enjoy/xconfig'
+OnlyShowIn=Unity;
+
 [Desktop Action Document]
 Name=New File
 Exec=/opt/sublime_text/sublime_text --command new_file
