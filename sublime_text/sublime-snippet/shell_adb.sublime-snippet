@@ -19,11 +19,13 @@
         adb shell screenrecord /sdcard/filename.mp4&&adb pull /sdcard/filename.mp4 xxxxx
     #services 列表
         adb shell service list
-    #查看手机IMEI
+    #查看设备IMEI
         adb shell dumpsys iphonesubinfo
         adb shell getprop gsm.baseband.imei
         service call iphonesubinfo 1
         service call iphonesubinfo 3
+    #查看设备亮度
+        adb shell "dumpsys power | grep mScreenBrightnessSetting"
 
 # =========== logcat
     #log等级
@@ -43,7 +45,7 @@
         adb shell svc wifi enable/disable
     #连接时保持亮屏 设置
         adb shell svc power stayon [true|false|usb|ac|wireless]
-    #解锁手机
+    #解锁设备
         adb shell input keyevent 26
     #关机
         adb shell reboot -p
@@ -92,6 +94,8 @@
     adb shell input keyevent keycode
     #输入文本
     adb shell input text
+    #模拟点击
+    adb shell input tap x y
 
 # =========== 卸载APK但保留数据和缓存文件
     adb uninstall -k packageName

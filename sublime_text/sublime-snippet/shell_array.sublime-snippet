@@ -29,6 +29,9 @@ echo "\${xxxxxx[@]}" | while read fileName;do
     echo "\${fileName}"
 done
 
+#空格 转 换行
+echo \${list[@]} | sed 's/ /\n/g'
+
 ]]></content>
 	<tabTrigger>xarray</tabTrigger>
 	<scope>source.shell</scope>

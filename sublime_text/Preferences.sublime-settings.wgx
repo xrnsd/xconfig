@@ -28,11 +28,15 @@
 		"CVS",
 		"node_modules/*"
 	],
-	"font_size": 13,
+	"font_size": 11,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
+		"All Autocomplete",
+		"BracketHighlighter",
+		"GitGutter",
+		"SyncedSideBar",
 		"Vintage"
 	],
 	"rulers":
