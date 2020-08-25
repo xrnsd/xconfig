@@ -19,6 +19,8 @@
         adb shell screenrecord /sdcard/filename.mp4&&adb pull /sdcard/filename.mp4 xxxxx
     #services 列表
         adb shell service list
+    #查看设备SN
+        adb shell getprop gsm.serial
     #查看设备IMEI
         adb shell dumpsys iphonesubinfo
         adb shell getprop gsm.baseband.imei
