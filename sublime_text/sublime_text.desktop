@@ -5,7 +5,7 @@ Name=Sublime Text
 GenericName=Text Editor
 Comment=Sophisticated text editor for code, markup and prose
 #Exec=/opt/sublime_text/sublime_text %F
-Exec=bash -c 'LD_PRELOAD=/home/enjoy/xconfig/sublime_text/libsublime-imfix.so /opt/sublime_text/sublime_text '%F
+Exec=bash -c 'LD_PRELOAD=/home/xian/xconfig/sublime_text/libsublime-imfix.so /opt/sublime_text/sublime_text '%F
 Terminal=false
 MimeType=text/plain;
 Icon=sublime-text
@@ -22,7 +22,7 @@ OnlyShowIn=Unity;
 [Desktop Action Window]
 Name=New Window & xbash xconfig
 #Exec=/opt/sublime_text/sublime_text -n
-Exec=bash -c 'LD_PRELOAD=/home/wgx/xconfig/sublime_text/libsublime-imfix.so /opt/sublime_text/sublime_text -n /home/enjoy/xbash /home/enjoy/xconfig'
+Exec=bash -c 'LD_PRELOAD=/home/wgx/xconfig/sublime_text/libsublime-imfix.so /opt/sublime_text/sublime_text -n /home/xian/xbash /home/xian/xconfig'
 OnlyShowIn=Unity;
 
 [Desktop Action Document]
