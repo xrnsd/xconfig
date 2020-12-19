@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=AndroidStudio
+Comment=Java IDE
+Exec=androidstudio
+Icon=/home/xian/tools/android-studio/bin/studio.png
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=Application;Development;
