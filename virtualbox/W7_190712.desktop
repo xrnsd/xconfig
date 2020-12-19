@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Name=W7_190712
+Comment=Starts the VirtualBox machine W7_190712
+Type=Application
+Exec=/usr/lib/virtualbox/VirtualBoxVM --comment "W7_190712" --startvm "{6963d54f-b90a-4095-9e15-1c967ea7f29a}"
+Icon=virtualbox-vbox.png
