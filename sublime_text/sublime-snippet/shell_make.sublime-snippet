@@ -18,6 +18,13 @@
                 lk
               #生成 preloader / preloader.img
                 pl
+              # 生成vendor.img
+                vendorimage-nodeps
+              # 生成dtbo
+                dtboimage
+
+      #清理 preloader ，添加flash兼容后必须操作
+      make clean-preloader
 
 ]]></content>
 	<tabTrigger>xmake</tabTrigger>
