@@ -18,6 +18,10 @@
     # 然后通过filter-branch来重写这些大文件涉及到的所有提交（重写历史记录）,删除单个文件
     git filter-branch -f --prune-empty --index-filter 'git rm -rf --cached --ignore-unmatch xxxx/xxx/xxx' --tag-name-filter cat -- --all
 
+# =========== 删除不存在对应远程分支的本地分支
+    git remote prune origin
+
+
 ]]></content>
 	<tabTrigger>xgit</tabTrigger>
 	<scope>source.shell</scope>

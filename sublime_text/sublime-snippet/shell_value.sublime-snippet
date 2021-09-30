@@ -35,6 +35,9 @@
 #以yyy为分隔符把xxx分割成数组zzz
     zzz=(\$(echo "\${xxx}"| sed 's?\$yyy? ?g'))
 
+#取第3列的值
+    | awk '{print \$3}'
+
 ]]></content>
 	<tabTrigger>xval</tabTrigger>
 	<scope>source.shell</scope>

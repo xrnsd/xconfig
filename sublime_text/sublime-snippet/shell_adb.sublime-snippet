@@ -85,9 +85,9 @@
         adb shell am kill packageName
     #杀死后台所有进程
         adb shell am kill-all
-    改变显示的分辨率
+    #改变显示的分辨率
         adb shell wm size 宽x高
-    改变显示的PPI
+    #改变显示的PPI
          adb shell wm density ppi值
          #adb shell wm density reset
 
@@ -101,6 +101,9 @@
 
 # =========== 卸载APK但保留数据和缓存文件
     adb uninstall -k packageName
+
+# =========== 卸载指定用户0的包名为packageName的APK
+    adb shell pm uninstall --user 0 packageName
 
 # =========== 清除APK数据与缓存
     adb shell pm clear packageName

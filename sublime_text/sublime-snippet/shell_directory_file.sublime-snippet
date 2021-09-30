@@ -27,6 +27,14 @@
     #去掉最后的斜杠
     [[ "\${dirPath: -1}" = "/" ]] && dirPath=\${dirPath%/*}
 
+# ===========  目录/文件信息
+    #文件大小,单位为字节
+     \$(stat -c "%s" \$filePath)
+
+     #文件最后修改时间
+     dirPathLastTime=\$(stat -c %Y \$dirPath)
+     \$(date '+%Y%m%d_%H%M%S' -d @\$dirPathLastTime)
+
 ]]></content>
 	<tabTrigger>xfile</tabTrigger>
 	<scope>source.shell</scope>
