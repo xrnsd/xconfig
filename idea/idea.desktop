@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=IDEA
+Comment=Java IDE
+Exec=sh /home/xian/tools/idea/bin/idea.sh
+Icon=/home/xian/tools/idea/bin/idea.png
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=Application;Development;
