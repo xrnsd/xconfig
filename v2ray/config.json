@@ -1,0 +1,67 @@
+{
+  "inbounds": [{
+    "port": 10800,  // SOCKS 代理端口，在浏览器中需配置代理并指向这个端口
+    "listen": "0.0.0.0",
+    "protocol": "socks",
+    "settings": {
+      "udp": true
+    }
+  }],
+  "outbounds": [{
+    "protocol": "vmess",
+    "settings": {
+      "vnext": [{
+        "address": "45.78.59.211", // 服务器地址，请修改为你自己的服务器 ip 或域名
+        "port": 16823,  // 服务器端口
+        "users": [{ "id": "8e05014a-3060-4e10-99c3-386bc545fe29" }]
+      }]
+    }
+  },{
+    "protocol": "freedom",
+    "tag": "direct",
+    "settings": {}
+  }],
+  "dns": {
+    "servers": [
+      "114.114.114.114",
+      {
+        "address": "1.1.1.1",
+        "port": 53,
+        "domains": [
+          "geosite:geolocation-!cn"
+        ]
+      }
+    ]
+  },
+  "routing": {
+    "domainStrategy": "IPOnDemand",
+    "rules": [
+      {
+      "type": "field",
+      "ip": ["geoip:private"],
+      "outboundTag": "direct"
+    },
+     // 第一条规则
+      {
+        "type": "field",
+        "outboundTag": "direct", // freedom 的 tag
+        "domain": ["geosite:cn"] // 中国大陆网站
+      },
+      // 第二条规则
+      {
+        "type": "field",
+        "outboundTag": "direct", // freedom 的 tag
+        "ip": [
+          "geoip:cn", // 中国大陆 IP
+          "geoip:private"
+        ]
+      },
+      // 第三条规则
+      {
+        "type": "field",
+        "outboundTag": "proxy",
+        "network": "udp,tcp"
+      }
+  ]
+  }
+}
