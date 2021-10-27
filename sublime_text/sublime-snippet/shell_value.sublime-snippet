@@ -38,6 +38,12 @@
 #取第3列的值
     | awk '{print \$3}'
 
+#耗时
+    timeStart=\$(date +%s)
+    timeEnd=\$(date +%s)
+    timeTake=\$(( timeEnd - timeStart ))
+    (( \$timeTake < 2 ))
+
 ]]></content>
 	<tabTrigger>xval</tabTrigger>
 	<scope>source.shell</scope>
