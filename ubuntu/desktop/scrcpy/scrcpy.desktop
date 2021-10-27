@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=scrcpy
+Comment=投屏助手
+Exec=scrcpy_proxy
+Icon=/home/xian/xconfig/ubuntu/desktop/scrcpy/scrcpy.png
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=Application;
