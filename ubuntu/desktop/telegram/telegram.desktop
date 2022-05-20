@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Telegram
+Comment=IMM
+Exec= env QT_IM_MODULE=fcitx telegram
+Icon=/home/xian/xconfig/telegram/images.png
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=Application;
