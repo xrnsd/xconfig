@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Motrix
+Comment=byte torrent download tool
+Exec= motrix
+Icon=/home/xian/xconfig/ubuntu/desktop/motrix/ic_motrix.png
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=Application;
