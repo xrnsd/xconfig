@@ -1,19 +1,24 @@
 {
   "inbounds": [{
-    "port": 10800,  // SOCKS 代理端口，在浏览器中需配置代理并指向这个端口
-    "listen": "0.0.0.0",
+    "port": 1080,  // SOCKS 代理端口，在浏览器中需配置代理并指向这个端口
     "protocol": "socks",
     "settings": {
-      "udp": true
-    }
+      "udp": true,
+      "enabled": true,
+      "destOverride": ["http", "tls"]
+    },
+      "settings": {
+        "auth": "noauth",
+        "udp": true
+      }
   }],
   "outbounds": [{
     "protocol": "vmess",
     "settings": {
       "vnext": [{
-        "address": "45.78.59.211", // 服务器地址，请修改为你自己的服务器 ip 或域名
-        "port": 16823,  // 服务器端口
-        "users": [{ "id": "8e05014a-3060-4e10-99c3-386bc545fe29" }]
+        "address": "185.239.71.49", // 服务器地址，请修改为你自己的服务器 ip 或域名
+        "port": 16822,  // 服务器端口
+        "users": [{ "id": "8bde6774-608b-44fa-9359-da6599c5182b" }]
       }]
     }
   },{
