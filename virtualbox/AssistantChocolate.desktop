@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Name=AssistantChocolate
+Comment=Starts the VirtualBox machine Assistant Chocolate
+Type=Application
+Exec=/usr/lib/virtualbox/VirtualBoxVM --comment "AssistantChocolate" --startvm "{f1f2ea48-928b-4245-a8fa-2e9a67f482ac}"
+Icon=/home/wds_work/xconfig/virtualbox/ic_assistant_chocolate.png

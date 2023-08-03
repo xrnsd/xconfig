@@ -3,7 +3,7 @@ Encoding=UTF-8
 Name=Telegram
 Comment=IMM
 Exec= env QT_IM_MODULE=fcitx telegram
-Icon=/home/xian/xconfig/ubuntu/desktop/telegram/images.png
+Icon=/home/wds_work/xconfig/ubuntu/desktop/telegram/images.png
 Terminal=false
 StartupNotify=true
 Type=Application

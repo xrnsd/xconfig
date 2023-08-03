@@ -2,8 +2,8 @@
 Encoding=UTF-8
 Name=AndroidStudio
 Comment=Java IDE
-Exec=androidstudio
-Icon=/home/xian/tools/android-studio/bin/studio.png
+Exec=androidStudio
+Icon=/home/wds_work/tools/android-studio/2022.1.1.20/bin/studio.png
 Terminal=false
 StartupNotify=true
 Type=Application

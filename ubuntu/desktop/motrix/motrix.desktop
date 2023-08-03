@@ -2,8 +2,8 @@
 Encoding=UTF-8
 Name=Motrix
 Comment=byte torrent download tool
-Exec= motrix
-Icon=/home/xian/xconfig/ubuntu/desktop/motrix/ic_motrix.png
+Exec= motrix %F
+Icon=/home/wds_work/xconfig/ubuntu/desktop/motrix/ic_motrix.png
 Terminal=false
 StartupNotify=true
 Type=Application

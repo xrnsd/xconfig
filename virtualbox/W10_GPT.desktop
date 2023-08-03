@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Name=W10_GPT
+Comment=Starts the VirtualBox machine W10_GPT
+Type=Application
+Exec=/usr/lib/virtualbox/VirtualBoxVM --comment "W10_GPT" --startvm "{df9250a7-128a-4ea1-a7ec-6dcd6a0b5b63}"
+Icon=/home/wds_work/xconfig/virtualbox/ic_10.png

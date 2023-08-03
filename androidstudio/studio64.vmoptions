@@ -1,25 +1,32 @@
-# 以server模式运行JVM，以达到更高的吞吐量
--server
 -Xms1024m
 -Xmx4096m
 -XX:ReservedCodeCacheSize=2048m
--XX:+UseConcMarkSweepGC
+-XX:+IgnoreUnrecognizedVMOptions
+-XX:+UseG1GC
 -XX:SoftRefLRUPolicyMSPerMB=80
-#并发GC线程数，这里根据逻辑CPU数量设定，也可以稍高一些，可以遵循阿姆达尔定律
--XX:ParallelGCThreads=8
 # 编译器线程数，这里根据逻辑CPU数量设定，也可以稍高一些，可以遵循阿姆达尔定律
 -XX:CICompilerCount=8
-# 设置理想的最大GC暂停时间，这样是为了提高Android Studio的响应速度，尽量防止GC造成卡顿
--XX:MaxGCPauseMillis=250
-
--Dsun.io.useCanonPrefixCache=false
+-XX:+HeapDumpOnOutOfMemoryError
+-XX:-OmitStackTraceInFastThrow
+-ea
+-Dsun.io.useCanonCaches=false
 -Djdk.http.auth.tunneling.disabledSchemes=""
 -Djdk.attach.allowAttachSelf=true
--Dkotlinx.coroutines.debug=off
 -Djdk.module.illegalAccess.silent=true
 -Djna.nosys=true
 -Djna.boot.library.path=
 -Didea.vendor.name=Google
+-Dkotlinx.coroutines.debug=off
+-Dsun.tools.attach.tmp.only=true
+-XX:MaxJavaStackTraceDepth=10000
+#-XX:+UseConcMarkSweepGC
+#并发GC线程数，这里根据逻辑CPU数量设定，也可以稍高一些，可以遵循阿姆达尔定律
+-XX:ParallelGCThreads=8
+-Dsun.io.useCanonPrefixCache=false
 -Dawt.useSystemAAFontSettings=lcd
 -Dsun.java2d.renderer=sun.java2d.marlin.MarlinRenderingEngine
--Dsun.tools.attach.tmp.only=true
+# 设置理想的最大GC暂停时间，这样是为了提高Android Studio的响应速度，尽量防止GC造成卡顿
+-XX:MaxGCPauseMillis=250
+
+#以server模式运行JVM，以达到更高的吞吐量
+-server

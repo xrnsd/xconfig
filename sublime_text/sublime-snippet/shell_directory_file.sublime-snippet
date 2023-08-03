@@ -16,6 +16,7 @@
     done < <(echo "\$(ls \$xxx)")
 
 # ===========  文件数量获取,xxx下名称含yyy的数量为zzz
+    [ ! "\$(ls -A \$DIR)" ] #文件夹判空
     zzz= \$(ls -l \$xxx |grep 'yyy'|grep "^-"|wc -l)
 
 # ===========  文件内容替换,文件zzz里面xxx替换成yyy
