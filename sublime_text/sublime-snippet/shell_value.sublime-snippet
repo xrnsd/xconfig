@@ -44,6 +44,12 @@
     timeTake=\$(( timeEnd - timeStart ))
     (( \$timeTake < 2 ))
 
+#参数解析
+    case "\$1" in
+    -x ) echo "receive -x"
+       ;;
+    *) ;; esac
+
 ]]></content>
 	<tabTrigger>xval</tabTrigger>
 	<scope>source.shell</scope>
